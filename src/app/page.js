@@ -25,6 +25,7 @@ export default function Home() {
             index % 2 === 0 ? 'bg-gray-50' : 'bg-white'
           }`}
         >
+          
           <div className="container mx-auto px-4 py-16 text-center">
             <h2 className="text-4xl font-bold mb-4">{section.title}</h2>
             <p className="text-lg text-gray-600">Content for this section will go here.</p>
