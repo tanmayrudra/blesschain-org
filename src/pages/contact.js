@@ -1,13 +1,7 @@
-
-import React from 'react';
-
-const Contact = () => {
+export default function Contact() {
   return (
-    <div>
-      <h1>Contact Us</h1>
-      <p>This is the contact page.</p>
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-4xl font-bold">Contact Us</h1>
     </div>
-  );
-};
-
-export default Contact;
+  )
+}

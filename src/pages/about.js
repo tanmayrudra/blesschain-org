@@ -1,13 +1,7 @@
-
-import React from 'react';
-
-const About = () => {
+export default function About() {
   return (
-    <div>
-      <h1>About Us</h1>
-      <p>This is the about page.</p>
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-4xl font-bold">About Us</h1>
     </div>
-  );
-};
-
-export default About;
+  )
+}

@@ -1,11 +1,1 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
-/* stylelint-disable at-rule-no-unknown */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-/* stylelint-enable at-rule-no-unknown */
-
-body {
-  font-family: 'Poppins', sans-serif;
-}
+@import "tailwindcss";
