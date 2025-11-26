@@ -49,7 +49,7 @@ const Countdown = () => {
 
 const UpgradeBanner = () => {
     return (
-        <div className="bg-[#313063]/30 text-white p-4">
+        <div className="bg-[#313063]/20 text-white p-4">
             <div className="container mx-auto flex items-center justify-between">
                 <div className="text-center">
                     <h3 className="font-bold text-xl">FUSAKA</h3>
@@ -84,20 +84,20 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
 
       <div className="flex-grow flex items-center justify-end relative z-20">
-        <div className="relative z-10 w-1/2 pr-16 text-left">
+        <div className="relative z-10 w-1/2 pr-16 text-center mx-auto">
           <h1 className="text-6xl font-bold text-white mb-6 tracking-tight">
             Empowering the Future with <span className="bg-gradient-to-r from-yellow-400 via-amber-400 to-orange-600 bg-clip-text text-transparent">Decentralized AI</span>
           </h1>
           <p className="text-xl text-white/80 mb-10">
             Join the new era of innovation where artificial intelligence meets the blockchain to create a more transparent and intelligent world.
           </p>
-          <button className="bg-gradient-to-r from-yellow-400 via-amber-400 to-orange-600 text-white font-bold py-4 px-10 rounded-full hover:from-yellow-500 hover:to-orange-700 transition-all duration-300 transform hover:scale-105">
+          <button className="bg-gradient-to-r from-yellow-400 via-amber-400 to-orange-600 text-white font-bold py-4 px-10 rounded-full hover:from-yellow-500 hover:to-orange-700 transition-all duration-300 transform hover:scale-105 cursor-pointer">
             Explore Now
           </button>
         </div>
       </div>
 
-      <div className="relative z-20">
+      <div className="absolute bottom-0 w-full z-20">
         <UpgradeBanner />
       </div>
     </section>
