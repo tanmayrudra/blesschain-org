@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 const Countdown = () => {
   const calculateTimeLeft = () => {
     const difference = +new Date('2025-12-31T23:59:59') - +new Date();
-    let timeLeft = {};
+    let timeLeft = { days: 0, hours: 0, minutes: 0 };
 
     if (difference > 0) {
       timeLeft = {
@@ -16,15 +16,18 @@ const Countdown = () => {
     return timeLeft;
   };
 
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0 });
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    // Set the initial time left
+    setTimeLeft(calculateTimeLeft());
+
+    const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
 
-    return () => clearTimeout(timer);
-  });
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <div className="flex space-x-4">
@@ -66,32 +69,35 @@ const UpgradeBanner = () => {
 
 const HeroSection = () => {
   return (
-    <section 
-      className="relative bg-cover bg-center bg-no-repeat min-h-screen flex flex-col"
-      style={{ backgroundImage: 'url(/hero_banner.png)' }}
+    <section
+      className="relative bg-[#010307] min-h-screen flex flex-col overflow-hidden"
     >
-      <div className="absolute inset-0 bg-black opacity-50"></div> 
+      <video
+        className="absolute inset-0 w-full h-full object-cover z-0"
+        src="/heroBanner.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+      />
+      <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
 
-      <div className="flex-grow flex items-center justify-end">
+      <div className="flex-grow flex items-center justify-end relative z-20">
         <div className="relative z-10 w-1/2 pr-16 text-left">
           <h1 className="text-6xl font-bold text-white mb-6 tracking-tight">
-            Empowering the Future with <span className="bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent">Decentralized AI</span>
+            Empowering the Future with <span className="bg-gradient-to-r from-yellow-400 via-amber-400 to-orange-600 bg-clip-text text-transparent">Decentralized AI</span>
           </h1>
           <p className="text-xl text-white/80 mb-10">
             Join the new era of innovation where artificial intelligence meets the blockchain to create a more transparent and intelligent world.
           </p>
-          <button className="bg-gradient-to-r from-purple-500 to-blue-600 text-white font-bold py-4 px-10 rounded-full hover:from-purple-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105">
+          <button className="bg-gradient-to-r from-yellow-400 via-amber-400 to-orange-600 text-white font-bold py-4 px-10 rounded-full hover:from-yellow-500 hover:to-orange-700 transition-all duration-300 transform hover:scale-105">
             Explore Now
           </button>
         </div>
       </div>
 
-
-
-
-
-      
-      <div className="relative z-10">
+      <div className="relative z-20">
         <UpgradeBanner />
       </div>
     </section>
