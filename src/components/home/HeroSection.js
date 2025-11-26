@@ -86,6 +86,11 @@ const HeroSection = () => {
         </div>
       </div>
 
+
+
+
+
+      
       <div className="relative z-10">
         <UpgradeBanner />
       </div>
