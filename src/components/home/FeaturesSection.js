@@ -1,68 +1,75 @@
 import React from 'react';
-import MagnifyingGlassIcon from '../icons/MagnifyingGlassIcon';
-import ImageIcon from '../icons/ImageIcon';
-import TrendingUpIcon from '../icons/TrendingUpIcon';
+import WalletIcon from '../icons/WalletIcon';
+import EthCoinIcon from '../icons/EthCoinIcon';
+import AppIcon from '../icons/AppIcon';
+import RocketIcon from '../icons/RocketIcon';
 
-const FeatureCard = ({ icon, title, description, isTextOnly }) => (
-  <div className="bg-white/40 backdrop-blur-sm p-6 rounded-xl shadow-lg text-center h-full flex flex-col justify-center items-center">
-    {icon}
-    <h3 className={`font-semibold text-gray-800 ${isTextOnly ? 'text-2xl mb-2' : 'text-xl mt-4 mb-2'}`}>{title}</h3>
-    <p className="text-gray-600 text-sm">{description}</p>
+const FeatureItem = ({ icon, title, description, titleColor }) => (
+  <div className="flex items-center space-x-6">
+    <div className="flex-shrink-0">
+      <div
+        className="p-4 rounded-2xl transition-shadow duration-200 ease-in-out"
+        style={{
+          border: '2px solid transparent',
+          backgroundImage:
+            'linear-gradient(#F3F4F6, #F3F4F6), linear-gradient(90deg, #E9B646, #0070F3)',
+          backgroundOrigin: 'padding-box, border-box',
+          backgroundClip: 'padding-box, border-box',
+          boxShadow: '0 8px 20px rgba(0,112,243,0.06), 0 6px 12px rgba(233,182,70,0.04)',
+        }}
+      >
+        {icon}
+      </div>
+    </div>
+    <div>
+      <h3 className={`text-lg font-bold ${titleColor}`}>{title}</h3>
+      <p className="text-gray-600">{description}</p>
+    </div>
   </div>
 );
+
 
 const FeaturesSection = () => {
   const features = [
     {
-      icon: <MagnifyingGlassIcon />,
-      title: 'Data Analysis',
-      description: 'Identify patterns and insights',
+      icon: <WalletIcon className="w-8 h-8 text-purple-600" />,
+      title: 'Pick a wallet',
+      description: 'Create accounts & manage assets',
+      titleColor: 'text-purple-600',
     },
     {
-      icon: <ImageIcon />,
-      title: 'Image Recognition',
-      description: 'Detect objects and scenes',
+      icon: <EthCoinIcon className="w-8 h-8 text-blue-600" />,
+      title: 'Get ETH',
+      description: 'The currency of Ethereum',
+      titleColor: 'text-blue-600',
     },
     {
-      title: 'Natural Language Processing',
-      description: 'Understand and generate text',
-      isTextOnly: true,
+      icon: <AppIcon className="w-8 h-8 text-green-600" />,
+      title: 'Try apps',
+      description: 'Finance, gaming, social',
+      titleColor: 'text-green-600',
     },
     {
-      icon: <TrendingUpIcon />,
-      title: 'Prediction',
-      description: 'Forecast future outcomes',
+      icon: <RocketIcon className="w-8 h-8 text-pink-600" />,
+      title: 'Start building',
+      description: 'Create your first app',
+      titleColor: 'text-pink-600',
     },
   ];
 
   return (
-    <section className="relative py-20 overflow-hidden">
-      {/* Aurora background */}
-      <div className="absolute inset-0 z-0 opacity-30">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-purple-500 rounded-full filter blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-blue-500 rounded-full filter blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-pink-500 rounded-full filter blur-3xl"></div>
-      </div>
-
-      <div className="relative z-10 container mx-auto px-4">
-        <div className="bg-white/20 backdrop-blur-lg rounded-3xl p-8 sm:p-12 shadow-2xl">
+    <section className="bg-[#0E0E12] py-16 sm:py-24">
+      <div className="container mx-auto px-4">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">AI App Features</h2>
-            <p className="text-gray-600 max-w-xl mx-auto">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
+            <h2 className="text-4xl font-bold text-white mb-4">How to get started</h2>
+            <p className="text-lg text-gray-400">Your journey into the decentralized world begins here.</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             {features.map((feature, index) => (
-              <FeatureCard key={index} {...feature} />
+              <FeatureItem key={index} {...feature} />
             ))}
-          </div>
-
-          <div className="text-center">
-            <button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold py-3 px-10 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-              Get Started
-            </button>
           </div>
         </div>
       </div>
@@ -71,3 +78,4 @@ const FeaturesSection = () => {
 };
 
 export default FeaturesSection;
+
