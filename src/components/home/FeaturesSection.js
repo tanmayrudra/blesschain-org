@@ -23,7 +23,15 @@ const FeatureItem = ({ icon, title, description, titleColor }) => {
   return (
     <div className="flex items-center space-x-6 group">
       <div
-        className="p-4 rounded-2xl transition-shadow duration-200 ease-in-out bg-gray-800"
+        className="p-4 rounded-2xl transition-shadow duration-200 ease-in-out"
+        style={{
+          border: '2px solid transparent',
+          backgroundImage:
+            'linear-gradient(#1f2937, #1f2937), linear-gradient(90deg, #E9B646, #0070F3)',
+          backgroundOrigin: 'padding-box, border-box',
+          backgroundClip: 'padding-box, border-box',
+          boxShadow: '0 8px 20px rgba(0,112,243,0.1), 0 6px 12px rgba(233,182,70,0.08)',
+        }}
       >
         {animatedIcon}
       </div>
