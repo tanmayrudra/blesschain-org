@@ -5,13 +5,13 @@ import ExternalLinkIcon from '../icons/ExternalLinkIcon';
 const IntroSection = () => {
   const cardData = [
     {
-      title: 'Just getting started?',
+      title: 'Explore BlessAI System',
       description: 'Learn how DOT gives you a voice—and powers everything in the Polkadot ecosystem.',
       icon: <ArrowIcon className="w-6 h-6" />,
       link: '#',
     },
     {
-      title: 'Ready to build?',
+      title: 'Try BlessOrder',
       description: 'Spin up a custom blockchain in minutes, or build the app of your dreams.',
       icon: <ExternalLinkIcon className="w-6 h-6" />,
       link: '#',
@@ -33,10 +33,10 @@ const IntroSection = () => {
 
       <div className="relative z-10 container mx-auto px-4 text-center">
         <h2 className="text-4xl sm:text-5xl font-bold mb-6 bg-gradient-to-b from-white to-zinc-400 bg-clip-text text-transparent">
-          Power without permission
+          AI & Blockchain for Real-World Business
         </h2>
         <p className="text-lg text-zinc-400 max-w-2xl mx-auto mb-20">
-          Every protocol upgrade, treasury decision, and network direction is determined transparently by DOT holders—the largest decentralized collective in Web3.
+          BlessChain powers the next generation of business applications through intelligent AI systems and energy-efficient blockchain technology.
         </p>
 
         <div className="grid md:grid-cols-3 gap-8 text-left">

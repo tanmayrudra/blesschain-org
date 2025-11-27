@@ -36,7 +36,7 @@ const FeatureItem = ({ icon, title, description, titleColor }) => {
         {animatedIcon}
       </div>
       <div>
-        <h3 className={`text-lg font-bold ${titleColor}`}>{title}</h3>
+        <h3 className={`text-md font-bold ${titleColor}`}>{title}</h3>
         <p className="text-gray-400">{description}</p>
       </div>
     </div>
@@ -48,25 +48,25 @@ const FeaturesSection = () => {
   const features = [
     {
       icon: <WalletIcon className="w-8 h-8" />,
-      title: 'Pick a wallet',
+      title: 'Dynamic Block Production',
       description: 'Create accounts & manage assets',
       titleColor: 'text-purple-600',
     },
     {
       icon: <EthCoinIcon className="w-8 h-8" />,
-      title: 'Get ETH',
+      title: 'Sabbath Mode',
       description: 'The currency of Ethereum',
       titleColor: 'text-blue-600',
     },
     {
       icon: <AppIcon className="w-8 h-8" />,
-      title: 'Try apps',
+      title: 'Home Validator Nodes',
       description: 'Finance, gaming, social',
       titleColor: 'text-green-600',
     },
     {
       icon: <RocketIcon className="w-8 h-8" />,
-      title: 'Start building',
+      title: 'Real-World Utility',
       description: 'Create your first app',
       titleColor: 'text-pink-600',
     },
@@ -77,8 +77,8 @@ const FeaturesSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-white mb-4">How to get started</h2>
-            <p className="text-lg text-gray-400">Your journey into the decentralized world begins here.</p>
+            <h2 className="text-4xl font-bold text-white mb-4">What is BlessChain?</h2>
+            <p className="text-lg text-gray-400">BlessChain is a sustainable blockchain infrastructure designed for real-world utility, home-friendly validator nodes, and AI-accelerated applications. It supports dynamic block production, Sabbath mode for energy efficiency, and integrates seamlessly with the BlessAI System.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
