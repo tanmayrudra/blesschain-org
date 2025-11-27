@@ -1,56 +1,63 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import WalletIcon from '../icons/WalletIcon';
 import EthCoinIcon from '../icons/EthCoinIcon';
 import AppIcon from '../icons/AppIcon';
 import RocketIcon from '../icons/RocketIcon';
 
-const FeatureItem = ({ icon, title, description, titleColor }) => (
-  <div className="flex items-center space-x-6">
-    <div className="flex-shrink-0">
+const FeatureItem = ({ icon, title, description, titleColor }) => {
+  const colors = ['text-blue-500', 'text-red-500', 'text-yellow-500', 'text-green-500'];
+  const [currentColorIndex, setCurrentColorIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentColorIndex((prevIndex) => (prevIndex + 1) % colors.length);
+    }, 1500); // Change color every 1.5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const animatedIcon = React.cloneElement(icon, {
+    className: `${icon.props.className || ''} ${colors[currentColorIndex]} transition-colors duration-700 ease-in-out transform group-hover:scale-110`,
+  });
+
+  return (
+    <div className="flex items-center space-x-6 group">
       <div
-        className="p-4 rounded-2xl transition-shadow duration-200 ease-in-out"
-        style={{
-          border: '2px solid transparent',
-          backgroundImage:
-            'linear-gradient(#F3F4F6, #F3F4F6), linear-gradient(90deg, #E9B646, #0070F3)',
-          backgroundOrigin: 'padding-box, border-box',
-          backgroundClip: 'padding-box, border-box',
-          boxShadow: '0 8px 20px rgba(0,112,243,0.06), 0 6px 12px rgba(233,182,70,0.04)',
-        }}
+        className="p-4 rounded-2xl transition-shadow duration-200 ease-in-out bg-gray-800"
       >
-        {icon}
+        {animatedIcon}
+      </div>
+      <div>
+        <h3 className={`text-lg font-bold ${titleColor}`}>{title}</h3>
+        <p className="text-gray-400">{description}</p>
       </div>
     </div>
-    <div>
-      <h3 className={`text-lg font-bold ${titleColor}`}>{title}</h3>
-      <p className="text-gray-600">{description}</p>
-    </div>
-  </div>
-);
+  );
+};
 
 
 const FeaturesSection = () => {
   const features = [
     {
-      icon: <WalletIcon className="w-8 h-8 text-purple-600" />,
+      icon: <WalletIcon className="w-8 h-8" />,
       title: 'Pick a wallet',
       description: 'Create accounts & manage assets',
       titleColor: 'text-purple-600',
     },
     {
-      icon: <EthCoinIcon className="w-8 h-8 text-blue-600" />,
+      icon: <EthCoinIcon className="w-8 h-8" />,
       title: 'Get ETH',
       description: 'The currency of Ethereum',
       titleColor: 'text-blue-600',
     },
     {
-      icon: <AppIcon className="w-8 h-8 text-green-600" />,
+      icon: <AppIcon className="w-8 h-8" />,
       title: 'Try apps',
       description: 'Finance, gaming, social',
       titleColor: 'text-green-600',
     },
     {
-      icon: <RocketIcon className="w-8 h-8 text-pink-600" />,
+      icon: <RocketIcon className="w-8 h-8" />,
       title: 'Start building',
       description: 'Create your first app',
       titleColor: 'text-pink-600',
