@@ -3,8 +3,9 @@ import WalletIcon from '../icons/WalletIcon';
 import EthCoinIcon from '../icons/EthCoinIcon';
 import AppIcon from '../icons/AppIcon';
 import RocketIcon from '../icons/RocketIcon';
+import ArrowIcon from '../icons/ArrowIcon';
 
-const FeatureItem = ({ icon, title, description, titleColor }) => {
+const FeatureItem = ({ icon, title, description }) => {
   const colors = ['text-blue-500', 'text-red-500', 'text-yellow-500', 'text-green-500'];
   const [currentColorIndex, setCurrentColorIndex] = useState(0);
 
@@ -36,8 +37,10 @@ const FeatureItem = ({ icon, title, description, titleColor }) => {
         {animatedIcon}
       </div>
       <div>
-        <h3 className={`text-md font-bold ${titleColor}`}>{title}</h3>
-        <p className="text-gray-400">{description}</p>
+        <h3 className="text-base font-bold text-[#BFBFBF]">{title}</h3>
+      </div>
+      <div>
+        
       </div>
     </div>
   );
@@ -50,25 +53,21 @@ const FeaturesSection = () => {
       icon: <WalletIcon className="w-8 h-8" />,
       title: 'Dynamic Block Production',
       description: 'Create accounts & manage assets',
-      titleColor: 'text-purple-600',
     },
     {
       icon: <EthCoinIcon className="w-8 h-8" />,
       title: 'Sabbath Mode',
       description: 'The currency of Ethereum',
-      titleColor: 'text-blue-600',
     },
     {
       icon: <AppIcon className="w-8 h-8" />,
       title: 'Home Validator Nodes',
       description: 'Finance, gaming, social',
-      titleColor: 'text-green-600',
     },
     {
       icon: <RocketIcon className="w-8 h-8" />,
       title: 'Real-World Utility',
       description: 'Create your first app',
-      titleColor: 'text-pink-600',
     },
   ];
 
@@ -86,6 +85,13 @@ const FeaturesSection = () => {
               <FeatureItem key={index} {...feature} />
             ))}
           </div>
+
+          <div className="mt-12 text-center">
+            <button className="mt-6 inline-flex items-center space-x-3 bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-600 text-white font-bold py-4 px-8 rounded-full hover:shadow-lg hover:shadow-amber-500/20 transition-all duration-300 transform hover:scale-105 cursor-pointer">
+              <span>Explore Technology</span>
+              <ArrowIcon className="w-5 h-5" />
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -93,4 +99,3 @@ const FeaturesSection = () => {
 };
 
 export default FeaturesSection;
-
