@@ -60,7 +60,7 @@ const TopModule = () => {
           <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">BlessAI System — The Intelligent Business Suite</h2>
           <p className="mt-3 text-lg text-white/70">Purpose-built products to cover your core operations.</p>
         </div>
-        <div className="grid w-full max-w-[83%] grid-cols-1 gap-6 md:grid-cols-4 md:gap-7">
+        <div className="grid w-full max-w-full grid-cols-1 gap-6 md:grid-cols-4 md:gap-7">
           {plans.map((plan) => (
             <div
               key={plan.name}
@@ -71,6 +71,7 @@ const TopModule = () => {
                   {plan.name}
                 </h3>
                 <p className="mb-6 text-[15px] font-medium text-white/70">{plan.subtitle}</p>
+                <div className="mx-auto mb-6 h-px w-14 bg-white/15" />
               </div>
 
               <ul className="mb-8 space-y-4 text-[17px] font-medium text-white/90">
@@ -85,7 +86,7 @@ const TopModule = () => {
               <div className="mt-auto">
                 <button
                   type="button"
-                  className="flex w-full items-center justify-center rounded-full bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-600 px-5 py-3 text-[16px] font-semibold text-white shadow-lg shadow-amber-500/15 transition-all duration-200 hover:scale-[1.02]"
+                  className="flex w-full items-center justify-center rounded-full bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-600 px-5 py-3 text-[16px] font-semibold text-white shadow-lg shadow-amber-500/15 transition-all duration-200 hover:scale-[1.02] cursor-pointer"
                 >
                   Choose Plan
                 </button>

@@ -74,7 +74,7 @@ const FeaturesSection = () => {
   return (
     <section className="bg-[#0E0E12] py-16 sm:py-24">
       <div className="container mx-auto px-4">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-full mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-white mb-4">What is BlessChain?</h2>
             <p className="text-lg text-gray-400">BlessChain is a sustainable blockchain infrastructure designed for real-world utility, home-friendly validator nodes, and AI-accelerated applications. It supports dynamic block production, Sabbath mode for energy efficiency, and integrates seamlessly with the BlessAI System.</p>

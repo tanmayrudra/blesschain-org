@@ -1,8 +1,8 @@
 import HeroSection from '@/components/home/HeroSection';
 import IntroSection from '@/components/home/IntroSection';
 import FeaturesSection from '@/components/home/FeaturesSection';
-import CTASection from '@/components/home/CTASection';
 import TopModule from '@/components/home/TopModuleSection';
+import BlessOrder from '@/components/home/BlessOrder';
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
       <IntroSection />
       <FeaturesSection />
       <TopModule />
-      <CTASection />
+      <BlessOrder />
     </div>
   );
 }
