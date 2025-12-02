@@ -15,8 +15,8 @@ const BlessOrder = () => {
         <div className="absolute left-1/2 top-2 h-64 w-px -translate-x-1/2 bg-gradient-to-b from-amber-400/80 via-amber-300/30 to-transparent" />
       </div>
 
-      <div className="mx-auto flex max-w-[83%] flex-col gap-10 px-6 text-white lg:flex-row lg:items-start">
-        <div className="relative z-10 flex flex-1 flex-col gap-6">
+      <div className="mx-auto flex max-w-[83%] gap-5 px-6 text-white lg:flex-row lg:items-start">
+        <div className="relative z-10 w-1/2 flex flex-1 flex-col gap-6">
           <div>
             <p className="mb-3 text-sm uppercase tracking-[0.2em] text-amber-300/80">BlessOrder</p>
             <h3 className="mb-3 text-[34px] font-semibold leading-[1.15] text-[#f6f0dd] sm:text-[42px] md:text-[48px]">
@@ -29,37 +29,30 @@ const BlessOrder = () => {
           </div>
           <button
             type="button"
-            className="inline-flex w-fit items-center justify-center rounded-full border border-amber-300/70 bg-[#0f1320] px-6 py-3 text-base font-semibold text-[#f6f0dd] shadow-[0_8px_25px_rgba(0,0,0,0.35)] transition duration-200 hover:-translate-y-0.5 hover:border-amber-300 hover:shadow-amber-400/10 cursor-pointer"
+            className="inline-flex w-fit items-center justify-center rounded-[14px] border border-[#c18c35] bg-[#0f1320] px-7 py-3 text-lg font-semibold text-[#f6f0dd] shadow-[0_10px_28px_rgba(0,0,0,0.32)] transition duration-150 hover:border-amber-300 cursor-pointer"
           >
             Get Started
           </button>
 
-          <div className="grid gap-4 rounded-2xl border border-amber-300/30 bg-[#0f1320]/60 p-6 shadow-[0_16px_40px_rgba(0,0,0,0.35)] backdrop-blur md:grid-cols-2">
-            <div className="space-y-3 border-b border-amber-300/20 pb-4 md:border-b-0 md:border-r md:pb-0 md:pr-6">
-              <h4 className="text-xl font-semibold text-[#f6f0dd]">A Smarter Way to Run Your Business</h4>
-              <p className="text-sm leading-relaxed text-[#c9c5b6]">
-                BlessOrder is a next-generation AI ERP system designed to unify inventory, sales, invoicing, and
-                operations with intelligent automation.
-              </p>
-            </div>
-            <div className="flex flex-col gap-4">
-              <FeatureCard
-                title="Real Time Inventory Sync"
-                copy="Predictive insights highlight low stock and recommend pricing adjustments."
-              />
-              <FeatureCard
-                title="AI Sales Insights"
-                copy="AI surfaces trends and revenue opportunities with proactive recommendations."
-              />
-            </div>
+          <div className="grid rounded-[18px] max-w-[95%] border border-[#1f2536] bg-[#0f1320] p-6 shadow-[0_16px_40px_rgba(0,0,0,0.35)] md:grid-cols-2 md:divide-x md:divide-[#1f2536]">
+            <FeatureCard
+              icon={<InventoryIcon />}
+              title="Real Time Inventory sync"
+              copy="Predicts menu highlights + cuts, and recommends pricing adjustments."
+            />
+            <FeatureCard
+              icon={<SalesIcon />}
+              title="AI Sales insights"
+              copy="Predicts trends, highlights drivers, and recommends pricing adjustments."
+            />
           </div>
         </div>
 
-        <div className="relative z-10 flex w-full max-w-xl flex-1 justify-center lg:justify-end">
-          <div className="relative w-full max-w-md">
+        <div className="relative z-10 flex w-1/2 max-w-2xl justify-center lg:justify-end">
+          <div className="relative w-full max-w-full">
             <DashboardCard activeTab={activeTab} onTabChange={setActiveTab} />
-            <div className="absolute -bottom-16 left-[-14%] hidden w-[118%] max-w-none lg:block">
-              <InventoryCard />
+            <div className="absolute top-[100%] left-[-14%] hidden w-[118%] max-w-none lg:block">
+              <InventoryCard />   
             </div>
           </div>
         </div>
@@ -71,13 +64,13 @@ const BlessOrder = () => {
   );
 };
 
-const FeatureCard = ({ title, copy }) => (
-  <div className="flex items-start gap-3 rounded-xl border border-amber-300/30 bg-[#111827]/60 p-4 shadow-[0_10px_28px_rgba(0,0,0,0.3)]">
-    <div className="mt-1 flex h-10 w-10 items-center justify-center rounded-xl border border-amber-300/40 bg-[#0f1320] text-amber-200">
-      <span className="text-lg">✦</span>
+const FeatureCard = ({ title, copy, icon }) => (
+  <div className="flex flex-col items-center gap-4 px-4 py-2 text-center text-[#c9c5b6]">
+    <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-amber-300/70 bg-[#0f1320] text-amber-200 shadow-[0_8px_20px_rgba(0,0,0,0.3)]">
+      {icon}
     </div>
     <div>
-      <p className="font-semibold text-[#f6f0dd]">{title}</p>
+      <p className="mb-2 text-[19px] font-semibold leading-tight text-[#f6f0dd]">{title}</p>
       <p className="text-sm leading-relaxed text-[#c9c5b6]">{copy}</p>
     </div>
   </div>
@@ -173,50 +166,56 @@ const DashboardCard = ({ activeTab, onTabChange }) => {
     }
 
     return (
-      <div className="flex-1">
-        <div className="mb-4 flex items-center justify-between text-sm text-[#8f9bad]">
-          <span>Overview</span>
-          <span className="text-amber-200">Live</span>
+      <div className="flex-1 text-[#f6f0dd]">
+        <div className="mb-3 text-[18px] font-semibold text-[#f4f0e2]">Overview</div>
+
+        <div className="mb-4 rounded-xl border border-[#1f2736] bg-[#131c2b] px-4 py-3 shadow-[0_8px_20px_rgba(0,0,0,0.25)]">
+          <div className="mb-3 text-[12px] font-medium text-[#8f9bad]">Seelog Bovarantaje</div>
+          <div className="h-28 rounded-lg bg-[#101827]/60 px-2 py-2">
+            <svg viewBox="0 0 320 120" className="h-full w-full">
+              <defs>
+                <linearGradient id="lineGlow" x1="0" x2="0" y1="0" y2="1">
+                  <stop stopColor="#f6c452" offset="0%" stopOpacity="0.9" />
+                  <stop stopColor="#d4953f" offset="100%" stopOpacity="0.7" />
+                </linearGradient>
+              </defs>
+              <path
+                d="M10 88 L60 78 L90 90 L130 70 L170 82 L200 68 L240 100 L280 82 L310 62"
+                fill="none"
+                stroke="url(#lineGlow)"
+                strokeWidth="4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </div>
         </div>
-        <div className="mb-5 rounded-xl border border-amber-300/20 bg-[#131a2a] p-3">
-          <svg viewBox="0 0 320 120" className="h-28 w-full">
-            <defs>
-              <linearGradient id="lineGlow" x1="0" x2="0" y1="0" y2="1">
-                <stop stopColor="#f6c452" offset="0%" stopOpacity="0.9" />
-                <stop stopColor="#d4953f" offset="100%" stopOpacity="0.65" />
-              </linearGradient>
-            </defs>
-            <path
-              d="M10 90 L60 78 L90 92 L130 70 L170 82 L200 68 L240 100 L280 80 L310 60"
-              fill="none"
-              stroke="url(#lineGlow)"
-              strokeWidth="4"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+
+        <div className="mb-4 grid grid-cols-3 gap-3 text-sm">
+          <Stat title="$25,340" label="Bulde Staclexi" />
+          <Stat title="134" label="Ordary" />
+          <Stat title="99" label="Cuatomers" />
         </div>
-        <div className="mb-5 grid grid-cols-3 gap-3 text-sm">
-          <Stat title="$25,340" label="Billing Selected" />
-          <Stat title="134" label="Orders" />
-          <Stat title="99" label="Customers" />
-        </div>
-        <div>
-          <p className="mb-3 text-sm text-[#8f9bad]">Recent Orders</p>
-          <div className="overflow-hidden rounded-xl border border-amber-300/15 bg-[#131a2a]">
-            <div className="flex items-center justify-between border-b border-amber-300/10 px-3 py-2 text-xs text-[#8f9bad]">
-              <span>Order</span>
+
+        <div className="rounded-xl border border-[#1f2736] bg-[#131c2b] px-3 py-3 shadow-[0_8px_20px_rgba(0,0,0,0.25)]">
+          <div className="mb-2 flex items-center justify-between text-[13px] font-medium text-[#f4f0e2]">
+            <span>Recent Orders</span>
+            <span className="text-[#8f9bad]">Statics</span>
+          </div>
+          <div className="overflow-hidden rounded-lg border border-[#1f2736] bg-[#101827]">
+            <div className="flex items-center justify-between border-b border-[#1f2736] px-3 py-2 text-[11px] uppercase tracking-[0.04em] text-[#8f9bad]">
+              <span>Order numbers</span>
               <span>Customer</span>
               <span>Status</span>
             </div>
             {[
               { id: 'BL-207', customer: 'Shipyard', status: 'Shipped' },
               { id: 'BL-209', customer: 'Office Desk', status: 'Shipped' },
-              { id: 'BL-210', customer: 'Jone Aola', status: 'Probing' },
-            ].map((item) => (
+              { id: 'BL-210', customer: 'Jone Aola', status: 'Probling' },
+            ].map((item, idx) => (
               <div
                 key={item.id}
-                className="flex items-center justify-between border-b border-amber-300/10 px-3 py-3 text-sm last:border-none"
+                className={`flex items-center justify-between px-3 py-3 text-[13px] ${idx < 2 ? 'border-b border-[#1f2736]' : ''}`}
               >
                 <span className="text-[#f6f0dd]">{item.id}</span>
                 <span className="text-[#c9c5b6]">{item.customer}</span>
@@ -290,9 +289,9 @@ const DashboardCard = ({ activeTab, onTabChange }) => {
 };
 
 const Stat = ({ title, label }) => (
-  <div className="rounded-xl border border-amber-300/20 bg-[#131a2a] px-3 py-4 text-center">
-    <p className="text-lg font-semibold text-[#f6f0dd]">{title}</p>
-    <p className="text-xs text-[#8f9bad]">{label}</p>
+  <div className="rounded-lg border border-[#1f2736] bg-[#131c2b] px-3 py-4 text-center shadow-[0_6px_16px_rgba(0,0,0,0.25)]">
+    <p className="text-[18px] font-semibold text-[#f6f0dd]">{title}</p>
+    <p className="text-[12px] text-[#8f9bad]">{label}</p>
   </div>
 );
 
@@ -343,6 +342,25 @@ const InventoryCard = () => (
       </div>
     </div>
   </div>
+);
+
+const InventoryIcon = () => (
+  <svg viewBox="0 0 40 40" className="h-8 w-8" fill="none" stroke="currentColor" strokeWidth="2.4">
+    <rect x="6" y="8" width="12" height="10" rx="2" strokeLinecap="round" strokeLinejoin="round" />
+    <rect x="22" y="14" width="12" height="10" rx="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M12 24v4a2 2 0 0 0 2 2h7" strokeLinecap="round" strokeLinejoin="round" />
+    <circle cx="26" cy="9" r="2" fill="currentColor" stroke="none" />
+  </svg>
+);
+
+const SalesIcon = () => (
+  <svg viewBox="0 0 40 40" className="h-8 w-8" fill="none" stroke="currentColor" strokeWidth="2.4">
+    <path d="M8 28V12" strokeLinecap="round" />
+    <path d="M16 28V18" strokeLinecap="round" />
+    <path d="M24 28V15" strokeLinecap="round" />
+    <path d="M32 28V10" strokeLinecap="round" />
+    <path d="M8 24l8-6 8 3 8-9" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
 );
 
 export default BlessOrder;
