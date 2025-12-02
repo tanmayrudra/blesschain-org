@@ -86,7 +86,14 @@ const Header = () => {
             {/* Left section */}
             <div className="flex-1 flex justify-start">
               <Link href="/" className="flex-shrink-0">
-                <span className="text-xl font-bold text-blesschain-primary">Demo Logo</span>
+                <Image
+                  src="/logo.png"
+                  alt="Blesschain logo"
+                  width={140}
+                  height={40}
+                  className="h-10 w-auto"
+                  priority
+                />
               </Link>
             </div>
 
