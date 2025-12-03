@@ -5,7 +5,7 @@ const BlessOrder = () => {
 
   return (
     <section
-      className="relative w-full overflow-hidden bg-[#0B0E19] py-16 sm:py-20"
+      className="relative w-full bg-[#0B0E19] py-16 pb-[100px] sm:py-20"
       style={{
         background:
           'radial-gradient(ellipse at 60% 10%, rgba(224,181,88,0.08), transparent 45%), radial-gradient(ellipse at 20% 30%, rgba(255,255,255,0.03), transparent 40%), #0B0E19',
@@ -51,8 +51,8 @@ const BlessOrder = () => {
         <div className="relative z-10 flex w-1/2 max-w-2xl justify-center lg:justify-end">
           <div className="relative w-full max-w-full">
             <DashboardCard activeTab={activeTab} onTabChange={setActiveTab} />
-            <div className="absolute top-[100%] left-[-14%] hidden w-[118%] max-w-none lg:block">
-              <InventoryCard />   
+            <div className="top-[100%] left-[-14%] hidden w-full max-w-none lg:block">
+              <InventoryCard />
             </div>
           </div>
         </div>
@@ -229,38 +229,11 @@ const DashboardCard = ({ activeTab, onTabChange }) => {
   };
 
   return (
-    <div className="relative overflow-hidden rounded-[18px] border border-[#c18c35] bg-[#0f1320] p-6 shadow-[0_18px_48px_rgba(0,0,0,0.45)]">
+    <div className="relative overflow-hidden rounded-[18px] border border-[#c18c35] bg-[#0f1320] shadow-[0_18px_48px_rgba(0,0,0,0.45)]">
       <div className="absolute inset-y-0 left-0 w-[3px] bg-gradient-to-b from-transparent via-amber-400 to-transparent" />
-      <div className="mb-5 flex items-center justify-between">
-        <div className="flex items-center gap-6">
+      <div className="flex">
+        <div className="w-[116px] bg-[#0d1222] p-3 text-sm text-[#9aa7ba] shadow-[0_12px_30px_rgba(0,0,0,0.35)]">
           <span className="text-lg font-semibold text-amber-200">BlessOrder</span>
-          <div className="flex items-center gap-5 text-sm text-[#8f9bad]">
-            {tabs.map((tab) => {
-              const isActive = tab === activeTab;
-              return (
-                <button
-                  key={tab}
-                  type="button"
-                  onClick={() => onTabChange(tab)}
-                  className={`pb-1 text-sm transition ${isActive ? 'text-[#f6f0dd]' : 'text-[#9aa7ba]'} cursor-pointer`}
-                >
-                  <span className="relative">
-                    {tab}
-                    {isActive && (
-                      <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-amber-300" aria-hidden="true" />
-                    )}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-        </div>
-        <span className="flex h-5 w-5 items-center justify-center rounded-full border border-amber-300/50 text-[10px] text-amber-200/70">
-          ○
-        </span>
-      </div>
-      <div className="flex gap-6">
-        <div className="w-[116px] rounded-[14px] border border-amber-300/15 bg-[#0d1222] p-3 text-sm text-[#9aa7ba] shadow-[0_12px_30px_rgba(0,0,0,0.35)]">
           {tabs.map((tab) => {
             const isActive = tab === activeTab;
             return (
@@ -268,9 +241,8 @@ const DashboardCard = ({ activeTab, onTabChange }) => {
                 key={tab}
                 type="button"
                 onClick={() => onTabChange(tab)}
-                className={`relative flex w-full items-center rounded-lg px-2 py-2 text-left transition hover:text-amber-200 cursor-pointer ${
-                  isActive ? 'text-amber-200' : 'text-[#9aa7ba]'
-                }`}
+                className={`relative flex w-full items-center rounded-lg px-2 py-2 text-left transition hover:text-amber-200 cursor-pointer ${isActive ? 'text-amber-200' : 'text-[#9aa7ba]'
+                  }`}
               >
                 {isActive && (
                   <span className="absolute -left-3 h-8 w-[3px] rounded-full bg-amber-300" aria-hidden="true" />
@@ -280,7 +252,34 @@ const DashboardCard = ({ activeTab, onTabChange }) => {
             );
           })}
         </div>
-        <div className="flex-1 rounded-[16px] border border-[#1b2233] bg-[#10172a] p-4 shadow-[0_12px_32px_rgba(0,0,0,0.35)]">
+        <div className="flex-1 rounded-[16px] border border-[#1b2233] bg-[#16202B] p-4 shadow-[0_12px_32px_rgba(0,0,0,0.35)]">
+          <div className="mb-4 flex items-center justify-between">
+            <div className="flex items-center gap-5 text-sm text-[#8f9bad]">
+              {tabs.map((tab) => {
+                const isActive = tab === activeTab;
+                return (
+                  <button
+                    key={tab}
+                    type="button"
+                    onClick={() => onTabChange(tab)}
+                    className={`pb-1 text-sm transition ${isActive ? 'text-[#f6f0dd]' : 'text-[#9aa7ba]'} cursor-pointer`}
+                  >
+                    <span className="relative">
+                      {tab}
+                      {isActive && (
+                        <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-amber-300" aria-hidden="true" />
+                      )}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+            <div className="flex items-center gap-6">
+              <span className="flex h-5 w-5 items-center justify-center rounded-full border border-amber-300/50 text-[10px] text-amber-200/70">
+                ○
+              </span>
+            </div>
+          </div>
           {renderContent()}
         </div>
       </div>
@@ -296,7 +295,7 @@ const Stat = ({ title, label }) => (
 );
 
 const InventoryCard = () => (
-  <div className="rounded-2xl border border-amber-300/30 bg-[#0f1320] p-5 shadow-[0_18px_40px_rgba(0,0,0,0.45)]">
+  <div className="rounded-2xl border border-amber-300/30 bg-[#0f1320] p-5 shadow-[0_18px_40px_rgba(0,0,0,0.45)] mt-5">
     <div className="grid gap-4 md:grid-cols-2">
       <div className="rounded-xl border border-amber-300/20 bg-[#131a2a] p-4">
         <div className="mb-3 flex items-center justify-between text-xs text-[#8f9bad]">
