@@ -94,7 +94,7 @@ const Header = () => {
                   className="h-10 w-auto"
                   priority
                 />
-              </Link>
+n               </Link>
             </div>
 
             {/* Center section */}

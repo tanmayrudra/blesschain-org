@@ -166,7 +166,7 @@ const DashboardCard = ({ activeTab, onTabChange }) => {
     }
 
     return (
-      <div className="flex-1 text-[#f6f0dd]">
+      <div className="flex-1 text-[#f6f0dd] px-5 pb-5">
         <div className="mb-3 text-[18px] font-semibold text-[#f4f0e2]">Overview</div>
 
         <div className="mb-4 rounded-xl border border-[#1f2736] bg-[#131c2b] px-4 py-3 shadow-[0_8px_20px_rgba(0,0,0,0.25)]">
@@ -232,8 +232,8 @@ const DashboardCard = ({ activeTab, onTabChange }) => {
     <div className="relative overflow-hidden rounded-[18px] border border-[#c18c35] bg-[#0f1320] shadow-[0_18px_48px_rgba(0,0,0,0.45)]">
       <div className="absolute inset-y-0 left-0 w-[3px] bg-gradient-to-b from-transparent via-amber-400 to-transparent" />
       <div className="flex">
-        <div className="w-[116px] bg-[#0d1222] p-3 text-sm text-[#9aa7ba] shadow-[0_12px_30px_rgba(0,0,0,0.35)]">
-          <span className="text-lg font-semibold text-amber-200">BlessOrder</span>
+        <div className="w-[180px] bg-[#0d1222] text-sm px-5 text-[#9aa7ba] shadow-[0_12px_30px_rgba(0,0,0,0.35)]">
+          <p className="text-lg font-semibold text-amber-200 py-5 border-b border-amber-200 text-cent">BlessOrder</p>
           {tabs.map((tab) => {
             const isActive = tab === activeTab;
             return (
@@ -252,9 +252,9 @@ const DashboardCard = ({ activeTab, onTabChange }) => {
             );
           })}
         </div>
-        <div className="flex-1 rounded-[16px] border border-[#1b2233] bg-[#16202B] p-4 shadow-[0_12px_32px_rgba(0,0,0,0.35)]">
-          <div className="mb-4 flex items-center justify-between">
-            <div className="flex items-center gap-5 text-sm text-[#8f9bad]">
+        <div className="flex-1 border border-[#1b2233] bg-[#16202B] shadow-[0_12px_32px_rgba(0,0,0,0.35)]">
+          <div className="mb-4 flex items-center justify-between border-b border-[#1f2736] py-5 px-5">
+            <div className="flex items-center gap-5 text-sm text-[#8f9bad] ">
               {tabs.map((tab) => {
                 const isActive = tab === activeTab;
                 return (
