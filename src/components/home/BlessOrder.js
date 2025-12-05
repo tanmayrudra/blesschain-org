@@ -82,7 +82,7 @@ const DashboardCard = ({ activeTab, onTabChange }) => {
   const renderContent = () => {
     if (activeTab === 'Orders') {
       return (
-        <div className="flex-1">
+        <div className="flex-1 px-5 pb-5">
           <div className="mb-4 flex items-center justify-between text-sm text-[#8f9bad]">
             <span>Orders</span>
             <span className="text-amber-200">Live</span>
@@ -119,7 +119,7 @@ const DashboardCard = ({ activeTab, onTabChange }) => {
 
     if (activeTab === 'Inventory') {
       return (
-        <div className="grid flex-1 gap-4 md:grid-cols-2">
+        <div className="grid flex-1 gap-4 md:grid-cols-2 px-5 pb-5">
           <div className="rounded-xl border border-amber-300/15 bg-[#131a2a] p-4">
             <div className="mb-3 flex items-center justify-between text-xs text-[#8f9bad]">
               <span>Inventory</span>
@@ -232,25 +232,27 @@ const DashboardCard = ({ activeTab, onTabChange }) => {
     <div className="relative overflow-hidden rounded-[18px] border border-[#c18c35] bg-[#0f1320] shadow-[0_18px_48px_rgba(0,0,0,0.45)]">
       <div className="absolute inset-y-0 left-0 w-[3px] bg-gradient-to-b from-transparent via-amber-400 to-transparent" />
       <div className="flex">
-        <div className="w-[180px] bg-[#0d1222] text-sm px-5 text-[#9aa7ba] shadow-[0_12px_30px_rgba(0,0,0,0.35)]">
-          <p className="text-lg font-semibold text-amber-200 py-5 border-b border-amber-200 text-cent">BlessOrder</p>
-          {tabs.map((tab) => {
-            const isActive = tab === activeTab;
-            return (
-              <button
-                key={tab}
-                type="button"
-                onClick={() => onTabChange(tab)}
-                className={`relative flex w-full items-center rounded-lg px-2 py-2 text-left transition hover:text-amber-200 cursor-pointer ${isActive ? 'text-amber-200' : 'text-[#9aa7ba]'
-                  }`}
-              >
-                {isActive && (
-                  <span className="absolute -left-3 h-8 w-[3px] rounded-full bg-amber-300" aria-hidden="true" />
-                )}
-                {tab}
-              </button>
-            );
-          })}
+        <div className="w-[180px] bg-[#0E1420] text-sm text-[#9aa7ba] shadow-[0_12px_30px_rgba(0,0,0,0.35)]">
+          <p className="text-lg font-semibold text-amber-200 py-[1.2rem] border-b mb-4 flex items-center justify-center border-b border-[#1f2736] text-center">BlessOrder</p>
+          <div className="px-5">
+            {tabs.map((tab) => {
+              const isActive = tab === activeTab;
+              return (
+                <button
+                  key={tab}
+                  type="button"
+                  onClick={() => onTabChange(tab)}
+                  className={`relative flex w-full items-center rounded-lg px-2 py-2 text-left transition hover:text-amber-200 cursor-pointer ${isActive ? 'text-amber-200' : 'text-[#9aa7ba]'
+                    }`}
+                >
+                  {isActive && (
+                    <span className="absolute -left-4 h-8 w-[3px] rounded-full bg-amber-300" aria-hidden="true" />
+                  )}
+                  {tab}
+                </button>
+              );
+            })}
+          </div>
         </div>
         <div className="flex-1 border border-[#1b2233] bg-[#16202B] shadow-[0_12px_32px_rgba(0,0,0,0.35)]">
           <div className="mb-4 flex items-center justify-between border-b border-[#1f2736] py-5 px-5">
