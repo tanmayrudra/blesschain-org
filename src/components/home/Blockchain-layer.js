@@ -22,7 +22,7 @@ const BlockchainLayer = () => {
             <div className="space-y-4 text-left">
               <p className="text-sm uppercase tracking-[0.24em] text-amber-300/80">Purpose</p>
               <h3 className="text-[30px] font-semibold leading-tight text-[#f6f0dd] sm:text-[36px]">
-                Blockchain Layer: Powered by BlessChain & BBTC
+                Powered by BlessChain & BBTC
               </h3>
               <p className="text-[15px] leading-relaxed text-[#c9c5b6]">
                 解释 BlessAI 运行在 BlessChain 上，同时介绍 BBTC 经济模型。
