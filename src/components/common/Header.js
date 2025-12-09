@@ -7,6 +7,7 @@ import SearchIcon from '../icons/SearchIcon';
 import MoonIcon from '../icons/MoonIcon';
 import SunIcon from '../icons/SunIcon';
 import LanguageIcon from '../icons/LanguageIcon';
+import UserLoginSection from './UserLoginSection';
 
 const SearchOverlay = ({ onClose }) => {
   const [query, setQuery] = useState('');
@@ -71,11 +72,29 @@ const SearchOverlay = ({ onClose }) => {
 
 const Header = () => {
   const [mounted, setMounted] = useState(false);
+  const [userName, setUserName] = useState('');
   const { theme, setTheme } = useTheme();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   useEffect(() => {
     setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    const readUser = () => {
+      if (typeof window === 'undefined') return;
+      const stored = window.localStorage.getItem('bc_user');
+      setUserName(stored || '');
+    };
+    readUser();
+
+    const handleAuthChange = () => readUser();
+    window.addEventListener('storage', handleAuthChange);
+    window.addEventListener('bc-auth-change', handleAuthChange);
+    return () => {
+      window.removeEventListener('storage', handleAuthChange);
+      window.removeEventListener('bc-auth-change', handleAuthChange);
+    };
   }, []);
 
   return (
@@ -94,29 +113,27 @@ const Header = () => {
                   className="h-10 w-auto"
                   priority
                 />
-n               </Link>
+              </Link>
             </div>
 
             {/* Center section */}
             <nav className="hidden md:flex space-x-8">
-              <Link href="/learn" className="text-blesschain-primary hover:opacity-75">Learn</Link>
-              <Link href="/use" className="text-blesschain-primary hover:opacity-75">Use</Link>
-              <Link href="/build" className="text-blesschain-primary hover:opacity-75">Build</Link>
-              <Link href="/participate" className="text-blesschain-primary hover:opacity-75">Participate</Link>
-              <Link href="/research" className="text-blesschain-primary hover:opacity-75">Research</Link>
+              <Link href="/about" className="text-blesschain-primary hover:opacity-75">About</Link>
+              <Link href="/blessai" className="text-blesschain-primary hover:opacity-75">BlessAI System</Link>
             </nav>
 
             {/* Right section */}
             <div className="flex-1 flex justify-end">
               <div className="flex items-center space-x-4">
-                <button 
+                <button
+                  type="button"
+                  aria-label="Open search"
                   onClick={() => setIsSearchOpen(true)}
-                  className="flex items-center space-x-2 p-2 rounded-md border border-gray-300 dark:border-gray-700 text-sm text-blesschain-primary hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer"
+                  className="flex items-center justify-center rounded-full border border-gray-300 dark:border-gray-700 p-2 text-blesschain-primary hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer"
                 >
-                  <SearchIcon className="w-4 h-4" />
-                  <span>Search</span>
-                  <kbd className="ml-4 px-2 py-1 text-xs font-sans rounded-md border bg-gray-100 dark:bg-gray-800 dark:border-gray-700 text-blesschain-primary">⌘K</kbd>
+                  <SearchIcon className="w-5 h-5" />
                 </button>
+                <UserLoginSection userName={userName} />
               </div>
             </div>
           </div>

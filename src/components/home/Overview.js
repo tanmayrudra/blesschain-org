@@ -43,14 +43,13 @@ const Verview = () => {
             {apps.map((app) => (
               <div
                 key={app.name}
-                className="relative flex h-full w-full items-center gap-3 rounded-[14px] border border-amber-300/25 bg-[#111827]/80 p-4 text-left shadow-[0_10px_28px_rgba(0,0,0,0.3)] transition hover:-translate-y-1 hover:border-amber-300/60 hover:shadow-amber-400/10 cursor-pointer"
+                className="relative flex h-full w-full items-center gap-3 rounded-[14px] border border-amber-300/25 bg-[#111827]/80 p-4 text-left shadow-[0_10px_28px_rgba(0,0,0,0.3)] transition hover:-translate-y-1 hover:border-amber-300/60 hover:shadow-amber-400/10"
               >
                 {(() => {
                   const theme = statusStyles[app.status] || statusStyles.Live;
-                  const blinkClass = app.status === 'Live' ? 'animate-pulse' : '';
                   return (
                     <div
-                      className={`absolute right-3 top-3 inline-flex w-fit items-center rounded-full border px-3 py-1 text-[12px] font-medium ${theme.border} ${theme.text} ${blinkClass}`}
+                      className={`absolute right-3 top-3 inline-flex w-fit items-center rounded-full border px-3 py-1 text-[12px] font-medium animate-pulse ${theme.border} ${theme.text}`}
                     >
                       {app.status}
                     </div>
