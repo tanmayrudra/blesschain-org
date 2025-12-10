@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '@/components/common/Button';
 
 const JoinNow = () => {
   return (
@@ -18,19 +19,13 @@ const JoinNow = () => {
         </div>
 
         <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-center">
-          {[
-            { label: 'Try BlessOrder', href: '/blessorder' },
-            { label: 'Explore BlessAI System', href: '/blessai' },
-            { label: 'Run a Validator', href: '/validators' },
-          ].map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className="inline-flex items-center justify-center rounded-full border border-[#c18c35] bg-[#0f1320] px-6 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-[#f6f0dd] shadow-[0_14px_30px_rgba(0,0,0,0.35)] transition duration-150 hover:border-amber-300 cursor-pointer"
-            >
-              {item.label}
-            </a>
-          ))}
+          <Button href="/blessorder">Try BlessOrder</Button>
+          <Button href="/blessai" variant="secondary">
+            Explore BlessAI System
+          </Button>
+          <Button href="/validators" variant="ghost">
+            Run a Validator
+          </Button>
         </div>
       </div>
     </section>

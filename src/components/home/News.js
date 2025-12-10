@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '@/components/common/Button';
 
 const highlights = [
   { title: 'Press release', copy: 'Latest announcements and media moments about BlessChain, BBTC, and ecosystem partners.' },
@@ -41,12 +42,7 @@ const News = () => {
         </div>
 
         <div className="flex justify-center">
-          <button
-            type="button"
-            className="inline-flex items-center justify-center gap-2 rounded-full border border-[#c18c35] bg-[#0f1320] px-7 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-[#f6f0dd] shadow-[0_10px_28px_rgba(0,0,0,0.32)] transition duration-150 hover:border-amber-300 cursor-pointer"
-          >
-            View All News
-          </button>
+          <Button href="/news">View All News</Button>
         </div>
       </div>
     </section>

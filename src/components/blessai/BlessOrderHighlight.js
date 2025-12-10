@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
+import Button from '@/components/common/Button';
 
 const features = [
   'Real-time inventory sync',
@@ -20,12 +20,9 @@ const BlessOrderHighlight = () => {
           <p className="text-[15px] leading-relaxed text-[#c9c5b6]">
             BlessOrder is the flagship application inside BlessAI System. It automates sales workflows, synchronizes inventory, generates smart invoices, and provides AI-powered business insights.
           </p>
-          <Link
-            href="/blessorder"
-            className="inline-flex items-center justify-center rounded-full border border-[#c18c35] bg-[#0f1320] px-5 py-2.5 text-sm font-semibold uppercase tracking-[0.14em] text-[#f6f0dd] shadow-[0_12px_28px_rgba(0,0,0,0.32)] transition duration-150 hover:border-amber-300 w-fit"
-          >
+          <Button href="/blessorder" className="w-fit">
             Learn More About BlessOrder
-          </Link>
+          </Button>
         </div>
         <div className="flex-1 space-y-3 rounded-2xl border border-white/10 bg-[#111525] p-5 shadow-[0_18px_40px_rgba(0,0,0,0.35)]">
           <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">

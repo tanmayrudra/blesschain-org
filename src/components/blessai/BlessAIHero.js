@@ -1,6 +1,6 @@
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
+import Button from '@/components/common/Button';
 
 const BlessAIHero = () => {
   return (
@@ -23,24 +23,13 @@ const BlessAIHero = () => {
             seamless AI-driven platform.
           </p>
           <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-            <Link
-              href="/blessorder"
-              className="inline-flex items-center justify-center rounded-full border border-[#c18c35] bg-[#0f1320] px-6 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-[#f6f0dd] shadow-[0_12px_28px_rgba(0,0,0,0.32)] transition duration-150 hover:border-amber-300"
-            >
-              Explore BlessOrder
-            </Link>
-            <Link
-              href="/"
-              className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-[#f6f0dd] transition duration-150 hover:border-amber-300"
-            >
+            <Button href="/blessorder">Explore BlessOrder</Button>
+            <Button href="/" variant="secondary">
               Visit BlessChain.com
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/0 px-6 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-[#f6f0dd] transition duration-150 hover:border-amber-300"
-            >
+            </Button>
+            <Button href="/contact" variant="ghost">
               Request Early Access
-            </Link>
+            </Button>
           </div>
         </div>
         <div className="relative flex-1 overflow-hidden rounded-3xl border border-white/10 bg-[#0f1320]/80 p-6 shadow-[0_24px_50px_rgba(0,0,0,0.4)]">

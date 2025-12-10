@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
+import Button from '@/components/common/Button';
 
 const AboutPage = () => {
   return (
@@ -317,30 +317,16 @@ const AboutPage = () => {
               BlessChain ecosystem.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <Link
-                href="/blessai"
-                className="inline-flex items-center justify-center rounded-full border border-[#c18c35] bg-[#0f1320] px-5 py-2.5 text-sm font-semibold uppercase tracking-[0.14em] text-[#f6f0dd] shadow-[0_12px_28px_rgba(0,0,0,0.32)] transition duration-150 hover:border-amber-300"
-              >
-                Explore BlessAI System
-              </Link>
-              <Link
-                href="/bbtc"
-                className="inline-flex items-center justify-center rounded-full border border-[#c18c35] bg-[#0f1320] px-5 py-2.5 text-sm font-semibold uppercase tracking-[0.14em] text-[#f6f0dd] shadow-[0_12px_28px_rgba(0,0,0,0.32)] transition duration-150 hover:border-amber-300"
-              >
+              <Button href="/blessai">Explore BlessAI System</Button>
+              <Button href="/bbtc" variant="secondary">
                 Learn About BBTC
-              </Link>
-              <Link
-                href="/validators"
-                className="inline-flex items-center justify-center rounded-full border border-[#c18c35] bg-[#0f1320] px-5 py-2.5 text-sm font-semibold uppercase tracking-[0.14em] text-[#f6f0dd] shadow-[0_12px_28px_rgba(0,0,0,0.32)] transition duration-150 hover:border-amber-300"
-              >
+              </Button>
+              <Button href="/validators" variant="ghost">
                 Join as a Validator
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-full border border-[#c18c35] bg-[#0f1320] px-5 py-2.5 text-sm font-semibold uppercase tracking-[0.14em] text-[#f6f0dd] shadow-[0_12px_28px_rgba(0,0,0,0.32)] transition duration-150 hover:border-amber-300"
-              >
+              </Button>
+              <Button href="/contact" variant="secondary">
                 Contact Partnerships
-              </Link>
+              </Button>
             </div>
           </div>
         </section>

@@ -120,6 +120,7 @@ const Header = () => {
             <nav className="hidden md:flex space-x-8">
               <Link href="/about" className="text-blesschain-primary hover:opacity-75">About</Link>
               <Link href="/blessai" className="text-blesschain-primary hover:opacity-75">BlessAI System</Link>
+              <Link href="/blessai/order" className="text-blesschain-primary hover:opacity-75">BlessOrder</Link>
             </nav>
 
             {/* Right section */}

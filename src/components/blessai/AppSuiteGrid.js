@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
+import Button from '@/components/common/Button';
 
 const apps = [
   { name: 'BlessOrder', subtitle: 'AI ERP & Sales' },
@@ -36,12 +36,7 @@ const AppSuiteGrid = () => {
           ))}
         </div>
         <div>
-          <Link
-            href="/blessai"
-            className="inline-flex items-center justify-center rounded-full border border-[#c18c35] bg-[#0f1320] px-5 py-2.5 text-sm font-semibold uppercase tracking-[0.14em] text-[#f6f0dd] shadow-[0_12px_28px_rgba(0,0,0,0.32)] transition duration-150 hover:border-amber-300"
-          >
-            Explore All Applications
-          </Link>
+          <Button href="/blessai">Explore All Applications</Button>
         </div>
       </div>
     </section>

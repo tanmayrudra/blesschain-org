@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
+import Button from '@/components/common/Button';
 
 const timeline = [
   {
@@ -70,12 +70,7 @@ const Roadmap = () => {
         </div>
 
         <div className="flex justify-center">
-          <Link
-            href="/roadmap"
-            className="inline-flex items-center justify-center gap-2 rounded-full border border-[#c18c35] bg-[#0f1320] px-8 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-[#f6f0dd] shadow-[0_10px_28px_rgba(0,0,0,0.32)] transition duration-150 hover:border-amber-300 cursor-pointer"
-          >
-            See Full Roadmap
-          </Link>
+          <Button href="/roadmap">See Full Roadmap</Button>
         </div>
       </div>
     </section>

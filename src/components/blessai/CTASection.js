@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
+import Button from '@/components/common/Button';
 
 const CTASection = () => {
   return (
@@ -16,24 +16,13 @@ const CTASection = () => {
           Supercharge Your Business with AI + Blockchain
         </h2>
         <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-center">
-          <Link
-            href="/blessorder"
-            className="inline-flex items-center justify-center rounded-full border border-[#c18c35] bg-[#0f1320] px-6 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-[#f6f0dd] shadow-[0_12px_28px_rgba(0,0,0,0.32)] transition duration-150 hover:border-amber-300"
-          >
-            Get Started with BlessOrder
-          </Link>
-          <Link
-            href="/blessai"
-            className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-[#f6f0dd] transition duration-150 hover:border-amber-300"
-          >
+          <Button href="/blessorder">Get Started with BlessOrder</Button>
+          <Button href="/blessai" variant="secondary">
             Explore BlessAI System
-          </Link>
-          <Link
-            href="/validators"
-            className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/0 px-6 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-[#f6f0dd] transition duration-150 hover:border-amber-300"
-          >
+          </Button>
+          <Button href="/validators" variant="ghost">
             Join the BlessChain Ecosystem
-          </Link>
+          </Button>
         </div>
       </div>
     </section>

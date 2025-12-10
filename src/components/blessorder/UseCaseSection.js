@@ -1,24 +1,22 @@
 import React from 'react';
-import Button from '@/components/common/Button';
 
-const cases = [
-  { title: 'Retail', bullets: ['End-to-end shop management', 'AI pricing & forecasting'] },
-  { title: 'Restaurants', bullets: ['Menu AI', 'Multi-branch automation'] },
-  { title: 'Delivery & Logistics', bullets: ['Route optimization', 'Driver assignment'] },
-  { title: 'Warehouses', bullets: ['Stock tracking', 'Order batching'] },
-  { title: 'Hotels', bullets: ['Booking → ordering → shipping integration'] },
+const useCases = [
+  { title: 'Retail', bullets: ['AI demand prediction', 'Product & variant sync'] },
+  { title: 'Restaurants', bullets: ['Menu → Order → Kitchen → Delivery full automation'] },
+  { title: 'Logistics', bullets: ['Auto-create shipping tasks', 'Route optimization'] },
+  { title: 'E-Commerce', bullets: ['Multi-channel integration (future)'] },
 ];
 
-const UseCases = () => {
+const UseCaseSection = () => {
   return (
-    <section className="bg-[#0B0E19] py-14">
+    <section className="bg-[#0E0E12] py-14">
       <div className="mx-auto flex max-w-5xl flex-col gap-6 px-6 text-white">
         <div className="space-y-3">
           <p className="text-xs uppercase tracking-[0.3em] text-amber-300/70">Industry Use Cases</p>
-          <h2 className="text-3xl font-semibold text-[#f6f0dd] sm:text-[34px]">Where BlessAI System Delivers</h2>
+          <h2 className="text-3xl font-semibold text-[#f6f0dd] sm:text-[34px]">Where BlessOrder Delivers</h2>
         </div>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {cases.map((item) => (
+        <div className="grid gap-4 sm:grid-cols-2">
+          {useCases.map((item) => (
             <div key={item.title} className="rounded-2xl border border-white/10 bg-[#111525] p-4 shadow-[0_14px_32px_rgba(0,0,0,0.35)] space-y-2">
               <p className="text-lg font-semibold text-[#f6f0dd]">{item.title}</p>
               <ul className="space-y-1 text-sm text-[#d9d4c6]">
@@ -32,12 +30,9 @@ const UseCases = () => {
             </div>
           ))}
         </div>
-        <div>
-          <Button href="/use">Explore Use Cases</Button>
-        </div>
       </div>
     </section>
   );
 };
 
-export default UseCases;
+export default UseCaseSection;
